@@ -1,9 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 const { SerialPort } = require("serialport");
 
-const ModelDni = require('./models/Dni')
+const ModelDni = require("./models/Dni");
 
 /* const arduino = new SerialPort({
   path: "/dev/tty.usbmodem143101",
@@ -22,6 +23,7 @@ const writeArduino = (data) => {
   });
 };
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/api/v1/", (_, res) => {
