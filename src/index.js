@@ -26,7 +26,7 @@ const writeArduino = (data) => {
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/api/v1/", (_, res) => {
+app.get("/api/v1/arduino/ports", (_, res) => {
   SerialPort.list().then((ports) => {
     res.send(ports);
   });
